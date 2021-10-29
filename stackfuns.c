@@ -72,3 +72,9 @@ bool isFull(stack *stk)
 int stacksize(stack *stk) {
     return stk->stkctr;
 }
+
+void map(stack *stk, int (*mapFun) (int, int), int mul) {
+    for (int i = 0; i < stk->stkctr; i++) {
+        stk->stk[i] = mapFun(stk->stk[i], mul);
+    }
+}

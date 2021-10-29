@@ -10,7 +10,7 @@ typedef struct
 
 stack *newStack();
 
-void push(int, stack*);
+void push(int, stack *);
 
 int pop(stack *);
 
@@ -26,3 +26,4 @@ bool isEmpty(stack *);
 
 int stacksize(stack *);
 
+void map(stack *, int (*)(int, int), int);

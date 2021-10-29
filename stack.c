@@ -1,4 +1,8 @@
 #include "stack.h"
+int multiply(int a, int b)
+{
+    return a * b;
+}
 int main()
 {
     stack *stk = newStack();
@@ -49,6 +53,12 @@ int main()
             {
                 printf("no");
             }
+            break;
+        case 8:
+            int num;
+            scanf("%d", &num);
+            map(stk, multiply, num);
+            printf("ok\n");
             break;
         default:
             printf("enter valid input!\n");
