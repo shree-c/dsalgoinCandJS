@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAXSIZE 5
+#define MAXSIZE 100 
 #include <stdbool.h>
 typedef struct
 {
     int *stk;
     int stkctr;
+    char *name;
 } stack;
 
 stack *newStack();

@@ -22,6 +22,7 @@ int pop(stack *stk)
     if (stk->stkctr == 0)
     {
         printf("Error: stack empty!!\n");
+        return -1;
     }
     else
     {
@@ -33,6 +34,7 @@ int returnTop(stack *stk)
     if (stk->stkctr == 0)
     {
         printf("Error: stack empty!!\n");
+        return -1;
     }
     else
     {
@@ -47,12 +49,12 @@ void printWhole(stack *stk)
     }
     else
     {
-        printf("start-->\n");
+        printf("[ ");
         for (int i = 0; i < stk->stkctr; i++)
         {
-            printf("%d ---> %d\n", i, stk->stk[i]);
+            printf("%d ", stk->stk[i]);
         }
-        printf("end-->\n");
+        printf("]");
     }
 }
 void clear(stack *stack)

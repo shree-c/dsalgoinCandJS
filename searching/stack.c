@@ -10,6 +10,7 @@ int main()
     printf("A stack has been created with the max-size of 100 elements.\n");
     do
     {
+        opt = 0;
         printf("You can perform the following operations on stack:\n\t1. push\n\t2. pop\n\t3. print top element\n\t4. print whole stack\n\t5. clear the stack\n\t6. is empty?\n\t7. exit\nEnter the serial numbers to perform operations: ");
         if (scanf("%d", &opt) != 1)
         {
@@ -41,9 +42,6 @@ int main()
         case 5:
             clear(stk);
             break;
-        case 7:
-            printf("bye\n");
-            break;
         case 6:
             if (isEmpty(stk))
             {
@@ -54,12 +52,17 @@ int main()
                 printf("no");
             }
             break;
+        case 7:
+            printf("bye\n");
+            break;
         case 8:
+        {
             int num;
             scanf("%d", &num);
             map(stk, multiply, num);
             printf("ok\n");
             break;
+        }
         default:
             printf("enter valid input!\n");
             break;
