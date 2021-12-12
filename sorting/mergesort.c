@@ -1,14 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define MAX 4000
-void printarray(int *arr, int max) {
-	printf("printing array: [ ");
-	for (int i = 0; i < max; i++) {
-		printf("%d ", arr[i]);
-	}
-	printf(" ]\n");
-}
+#include "utility.h"
+
 void merge(int *arr, int l, int m, int h) {
 	//finding two temperory array sizes
 	int ls = m - l + 1;
@@ -50,6 +41,7 @@ void msort(int *arr, int l, int h) {
 		merge(arr, l, mid, h);
 	}
 }
+
 int main() {
 	srand(time(0));
 	int upper = 100, lower = 0;
@@ -62,5 +54,4 @@ int main() {
 	msort(arr, 0, MAX - 1);
 	printarray(arr, MAX);
 }
-
 

@@ -6,9 +6,7 @@ for (let i = 0; i < arr.length; i++) {
       arr[j - 1] = arr[j];
       arr[j] = temp;
     }
-    console.log(arr);
   }
-  console.log(`loop count: ${i}`);
 }
 
 
