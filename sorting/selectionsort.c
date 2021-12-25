@@ -1,15 +1,22 @@
 #include "utility.h"
 
 void selectionsort(int *arr, int lo, int hi) {
+	int n = 0;
+	int c = 0;
 	for (int i = lo; i < hi; i++) {
 		int minindex = i;
 		for (int j = i + 1; j <= hi; j++) {
+			c++;
 			if (arr[j] < arr[minindex]) {
 				minindex = j;
 			}
 		}
-		swap(&arr[i], &arr[minindex]);
+		if (minindex != i) {
+			swap(&arr[i], &arr[minindex]);
+			n++;
+		}
 	}
+	printf("%d swaps, %d comparisions\n", n, c);
 }
 int main() {
 	srand(time(0));

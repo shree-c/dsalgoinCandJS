@@ -4,7 +4,7 @@ void printarray(int *arr, int max) {
 	for (int i = 0; i < max; i++) {
 		printf("%d ", arr[i]);
 	}
-	printf(" ]\n");
+	printf(" ]\n\n");
 }
 void swap(int *a, int *b) {
 	int temp = *a;

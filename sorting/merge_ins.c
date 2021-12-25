@@ -1,5 +1,4 @@
 #include "utility.h"
-
 void merge(int *arr, int l, int m, int h) {
 	//finding two temperory array sizes
 	int ls = m - l + 1;
@@ -46,7 +45,14 @@ void insersion_sort_opt(int *arr, int lo, int hi) {
 void msort(int *arr, int l, int h) {
 	if (l < h) {
 		int mid = (l + h)/2;
+		printf("%d %d %d\n", l, h, h - l);
 		msort(arr, l, mid);
+		if (h - l < 50) {
+			printf("-->%d %d %d\n", l, h, h - l);
+			insersion_sort_opt(arr, l, mid);
+			insersion_sort_opt(arr, mid+1, h);
+			return;
+		}
 		msort(arr, mid+1, h);
 		merge(arr, l, mid, h);
 	}
