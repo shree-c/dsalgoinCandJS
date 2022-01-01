@@ -32,7 +32,7 @@ char * infix_to_postfix(char *exp) {
       pop(stackhol);
     }
     else {
-      while (!isEmpty(stackhol) && precedence(exp[i]) <+ precedence(returnTop(stackhol))) {
+      while (!isEmpty(stackhol) && precedence(exp[i]) <= precedence(returnTop(stackhol))) {
         ret_array[++ret_arr_pos] = pop(stackhol);
       }
       push((int) exp[i], stackhol);

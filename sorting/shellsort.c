@@ -2,6 +2,8 @@
 int spseq[8] = {701, 301, 132, 57, 23, 10, 4, 1};
 void shellsort(int *arr, int lo, int hi) {
 	//for getting gaps
+	//int siz = hi - lo + 1;
+	//for (int x = siz/2; x >=  1; x = x/2) {
 	for (int x = 0; x <  8; x++) {
 		//takes up element group for a gap
 		for (int offset = lo; offset < spseq[x]; offset++) {

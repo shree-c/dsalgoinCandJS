@@ -1,19 +1,19 @@
 #include <stdio.h>
 void move(int i, char start, char end, char hold)
 {
-    if (i > 0) {
-        move(i - 1, start, hold, end);
+    /*if (i > 0) {
+        move(i - 1, start, end, hold);
         printf("Move %d from %c to %c\n", i, start, end);
-        move(i - 1, hold, end, start);
+        move(i - 1, hold, start, end);
+    }*/
+    if (i == 1)
+    {
+        printf("Move disk %d from %c tower to %c tower.\n", i, start, end);
+        return;
     }
-    // if (i == 1)
-    // {
-    //     printf("Move disk %d from %c tower to %c tower.\n", i, start, end);
-    //     return;
-    // }
-    // move(i - 1, start, hold, end);
-    // printf("Move disk %d from %c tower to %c tower.\n", i, start, end);
-    // move(i - 1, hold, end, start);
+    move(i - 1, start, hold, end);
+    printf("Move disk %d from %c tower to %c tower.\n", i, start, end);
+    move(i - 1, hold, end, start);
 }
 int main()
 {
